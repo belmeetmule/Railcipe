@@ -1,0 +1,28 @@
+<div class=" mx-auto d-flex flex-column justify-content-center align-items-center p-3 m bg-secondary-subtle", style= "width: 60%" >
+<%= form_with model: @recipe_food, url: user_recipe_recipe_foods_path, class: 'form w-50' do |form| %>
+    <% if @recipe_food.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@recipe_food.errors.count, "error") %> prohibited this recipe_food from being saved:</h2>
+  
+        <ul>
+          <% @recipe_food.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class="form flex flex-col">
+    <div>
+      <label class="form-label d-block">Quantity</label> <br/>
+      <%= form.number_field :quantity, class: 'form-control' %> <br/>
+    </div>
+      
+    <div class="form flex">
+    <span class="">*Click to dropdown</span>
+      <%= form.select :food_id, @user.foods.order(name: :asc).map { |f| [f.name, f.id]}, {}, class: "form-control" %>
+    </div>
+  
+   <%= form.button "Add Ingredient", type: "submit", class: "btn btn-primary", 'data-ripple-light': true %>
+   </div>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<h1> User details </h1>
+<section class = "container">
+    <div>
+        <div><%= @user.name %></div>
+        <div><%= @user.email %></div>
+    </div>
+
+    <div class = "button-group">
+
+        <%= button_to "Update user", 
+        edit_user_registration_path,
+                    method: :get %> 
+        <%= button_to "Return to users Page", 
+                    users_path,
+                    method: :get %>
+    </div>
+</section>

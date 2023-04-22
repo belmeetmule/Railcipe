@@ -1,0 +1,26 @@
+<section class="container">
+
+<div class=" rounded-5 mx-auto d-flex flex-column justify-content-center align-items-center p-3 m bg-secondary-subtle", style= "width: 60%" >
+<h1 class="text-center"> Create new food </h1>
+
+<%= form_with model: @food, url: user_foods_path, class: "w-100" do |f| %>
+  <div class="form-group mt-3">
+    <%= f.text_field :name, placeholder:"Name", class: "w-100 form-control fs-5" %> <br/>
+    
+    <%= f.text_field :measurement_unit, placeholder:"Measurement unit", class: "w-100 form-control fs-5" %> <br/>
+ 
+    <%= f.number_field :price, placeholder:"Price", class: "w-100 form-control fs-5" %> <br/>
+   
+    <%= f.number_field :quantity, placeholder:"Quantity", class: "w-100 form-control fs-5" %> <br/>
+    <div class= "d-flex justify-content-center gap-3 mt-3">
+      <%= link_to "Cancel", user_foods_path, class: "btn btn-danger p-3 fs-5" %>
+      <%= f.submit class: "p-3 btn btn-primary fs-5" %>
+    </div>
+</div>
+    
+   </div>
+<% end %>
+
+</div>
+
+</section>

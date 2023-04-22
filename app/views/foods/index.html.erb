@@ -1,0 +1,29 @@
+<section class="container">
+<div class="d-flex justify-content-end">
+<%= link_to "Add Food", new_user_food_path, class: 'btn btn-primary mb-4' %>
+</div>
+<h4>Foods list</h4>
+<table class="table table-striped fs-4">
+  <thead class="table-secondary">
+    <tr>
+      <th>Name</th>
+      <th>Measurement unit</th>
+      <th>Price</th>
+      <th colspan="3"> Actions </th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><strong> $ </strong> <%= food.price %> </td>
+        <td><%= link_to 'Delete', user_food_path(current_user.id, food), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</section>
+

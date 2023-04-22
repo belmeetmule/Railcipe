@@ -1,0 +1,20 @@
+<section class="container">
+<h3> Are you sure you want to delete this ? </h3>
+<h5><strong> name: </strong><%= @food.name %></h5>
+<h5><strong>Measurement Unit: </strong> <%= @food.measurement_unit %></h5>
+<h5><strong>Price: </strong><%= @food.price %></h5>
+<h5><strong>Quantity: </strong> <%= @food.quantity %></h5>
+
+<div class = "d-flex gap-4">
+<%= button_to "Return to Foods Page", 
+              user_foods_path,
+              class: "btn btn-secondary",
+              method: :get %>
+              
+              <%= button_to "Delete Food", 
+              user_food_path(@user, @food),
+              method: :delete, 
+              class: "btn btn-danger" %> 
+
+
+</section>

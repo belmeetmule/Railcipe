@@ -1,0 +1,32 @@
+<section class="container">
+  <div class="rounded-5 d-flex flex-column bg-secondary-subtle justify-content-center align-items-center mx-auto p-5 w-50">
+  <h3>Create a new recipe</h3>
+  <%= form_with model: @recipe, url: user_recipes_path, class: "w-100" do |f| %>
+    <div class="form-group w-100">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:"form-control fs-4", style:"width: 100%" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :preparation_time %>
+      <%= f.number_field :preparation_time, class:"form-control fs-4" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :cooking_time %>
+      <%= f.number_field :cooking_time, class:"form-control fs-4" %>
+    </div>
+    <div class="form-check mt-2">
+      <%= f.label :public, class: "form-check-label fs-4" %>
+      <%= f.check_box :public, type: "checkbox", class:"form-check-input" %>
+    </div>
+    <div class="form-group mt-2">
+      <div class= "d-flex justify-content-center gap-3 mt-3">
+      <%= link_to 'Cancel', user_recipes_path(current_user), class: "btn btn-danger p-2 fs-5" %>      
+      <%= f.submit class: "p-2 btn btn-primary fs-5" %>
+      </div>
+    </div>
+  <% end %>
+</section>
