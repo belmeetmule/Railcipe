@@ -95,7 +95,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
  - mkdir my-folder
  - cd my-folder
- - git clone [(git@github.com:SaboorSohaib/Recipe-app.git)]
+ - git clone [(git@github.com/belmeetmule/Railcipe.git)]
 
 ### Usage
 
@@ -142,9 +142,8 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] - **Keep track of all your recipes, ingredient, and inventory**
-- [ ] - **allows you to save ingredients, keep track of what you have, create recipes, and generate a shopping**
-- [ ] - **Allows you to make the recipes public so anyone can access them**
+- [ ] - **Add picture for each recipe**
+- [ ] - ** Show public recipe without signing in **
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
